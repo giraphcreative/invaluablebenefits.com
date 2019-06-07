@@ -241,10 +241,12 @@ header {
 
 	@include respond-to( 1024px ) {
 		margin-left: -50px;
+		padding-left: 50px;
 	}
 
 	@include respond-to( 1150px ) {
 		margin-left: -70px;
+		padding-left: 70px;
 	}
 }
 
