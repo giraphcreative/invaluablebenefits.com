@@ -289,17 +289,35 @@ header {
 }
 
 
+.slides {
+	border-bottom: 1px solid darken( $teal, 20% );
+
+	.slide {
+		display: none;
+
+		&:first-child {
+			display: block;
+		}
+	}
+}
+
+
 .savings-content {
 	background: url(../img/bg-stripe-blue.jpg) center center no-repeat;
 	background-size: cover;
 	color: white;
 	font-size: 1.4em;
 	line-height: 1.6em;
+	min-height: 500px;
+	@include font-bold;
+
+	&.auto {
+		background-image: url(../img/bg-stripe-teal.jpg);
+	}
 
 	ul {
 		list-style-type: disc;
 		padding: 15px 10px 15px 40px;
-		@include font-bold;
 	}
 }
 
