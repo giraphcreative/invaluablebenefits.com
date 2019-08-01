@@ -3,15 +3,41 @@
 // on load
 $(document).ready(function(){
 
-	setInterval( function(){
-		var current_slide = $('.slide:visible');
-		var next_slide = current_slide.next('.slide:hidden');
-		if ( typeof( next_slide.html() ) == 'undefined' ) {
-			var next_slide = $('.slide:first-child');
+	var next_slide = function() {
+		var current = $('.slide:visible');
+		var nxt = current.next('.slide:hidden');
+		if ( typeof( nxt.html() ) == 'undefined' ) {
+			var nxt = $('.slide:first');
 		}
-		current_slide.hide();
-		next_slide.show();
-	}, 30000 );
+		current.hide();
+		nxt.show();
+	}
+
+	var prev_slide = function() {
+		var current = $('.slide:visible');
+		var previous = current.prev('.slide:hidden');
+		if ( typeof( previous.html() ) == 'undefined' ) {
+			var previous = $('.slide:last');
+		}
+		current.hide();
+		previous.show();
+	}
+
+	var slideInterval = setInterval( next_slide, 30000 );
+
+	$('.slide-control').on( 'click', function(){
+
+		// stop the auto-rotation
+		clearInterval( slideInterval );
+		
+		// if it's the next control, go next, if prev, go prev
+		if ( $(this).hasClass( 'next' ) ) {
+			next_slide();
+		} else {
+			prev_slide();
+		}
+
+	});
 
 });
 
