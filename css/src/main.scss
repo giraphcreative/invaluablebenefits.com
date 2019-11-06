@@ -373,11 +373,10 @@ header {
 
 			@include respond-to( 500px ) {
 				float: left;
-				width: 25%;
+				width: 50%;
 			}
 
-			@include respond-to( 500px ) {
-				float: left;
+			@include respond-to( 1000px ) {
 				width: 25%;
 			}
 
