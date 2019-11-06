@@ -358,6 +358,41 @@ header {
 	}
 }
 
+.savings {
+	& > img {
+		display: block;
+	}
+	
+	.savings-columns {
+		@include clearfix;
+		background: url(../img/bg-stripe-grey.jpg) center center no-repeat;
+		background-size: cover;
+
+		img {
+			background: rgba( grey, .15 );
+
+			@include respond-to( 500px ) {
+				float: left;
+				width: 25%;
+			}
+
+			@include respond-to( 500px ) {
+				float: left;
+				width: 25%;
+			}
+
+			&.button-contact {
+				margin: 25px 0;
+				width: auto;
+				background: none;
+
+				@include respond-to( 500px ) {
+					float: right;
+				}
+			}
+		}
+	}
+}
 
 .savings-content {
 	background: url(../img/bg-stripe-blue.jpg) center center no-repeat;
