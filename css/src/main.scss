@@ -370,13 +370,15 @@ header {
 
 		img {
 			background: rgba( grey, .15 );
+			width: 100%;
+			display: block;
 
-			@include respond-to( 500px ) {
+			@include respond-to( 400px ) {
 				float: left;
 				width: 50%;
 			}
 
-			@include respond-to( 1000px ) {
+			@include respond-to( 800px ) {
 				width: 25%;
 			}
 
